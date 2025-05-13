@@ -33,4 +33,5 @@ Finally, I visualized the top 10 most important features that influenced the mod
 Overall, this was a complete machine learning workflow — from data preparation to model training and result interpretation. It not only gave me a working model but also provided insights into which factors are most influential when it comes to predicting where someone might choose to invest.
 
 *OUTPUT*
+
 ![Image](https://github.com/user-attachments/assets/0c48f413-31a8-4143-8349-5b1f6019c94c)
