@@ -14,23 +14,31 @@
 
 *PROJECT DESCRIPTION*
 
-In this project, I built a machine learning model to predict investment avenues based on various features in a dataset. I used a Random Forest Classifier, which is a popular algorithm for classification problems, and followed a step-by-step process that included data cleaning, encoding, model training, evaluation, and visualization.
+In this project, I worked on building a machine learning model that handles both classification and regression tasks using a dataset called "Data_set 2.csv". The main objective was to predict two different types of outputs: one categorical (the type of investment avenue) and one numerical (the mutual fund score). I wanted to explore how different ML techniques perform on the same dataset but with different prediction goals.
 
-To start, I imported all the necessary Python libraries like pandas for data handling, matplotlib and seaborn for visualization, and some tools from scikit-learn for preprocessing and modeling.
+I started by importing all the essential libraries like pandas for data handling, matplotlib and seaborn for visualizations, and several modules from scikit-learn for modeling. Once I loaded the dataset, I cleaned it up by dropping any rows with missing values using df.dropna() to avoid any issues during model training.
 
-After loading the dataset from a CSV file, I cleaned it by removing any rows with missing values. This helped avoid complications during model training and made the dataset more reliable to work with.
+Since machine learning models can’t directly work with categorical data, I used LabelEncoder to convert all categorical columns into numerical form. To make this process reusable and reversible if needed, I stored each label encoder in a dictionary. This way, I can refer back to the original labels when needed—especially helpful for interpreting the classification output later.
 
-Since the dataset included categorical columns (like text labels), I used LabelEncoder to convert them into numerical format. Machine learning models typically can’t work with strings directly, so this step was important. I also stored the encoders so I could later convert predictions back to their original form for interpretation.
+The first ML task I tackled was classification. I wanted to predict the type of investment avenue a user might choose based on their features. I separated the features (independent variables) and the target (the "Avenue" column) and then split the data into training and testing sets (80-20 split).
 
-Once the data was clean and properly formatted, I separated it into two parts: the features (which help with prediction) and the target (what I want to predict — in this case, the “Avenue” or type of investment). I then split the data into training and testing sets, using 80% for training the model and 20% for testing its performance.
+For this, I used a Random Forest Classifier because it’s generally reliable, handles both categorical and numerical data well, and gives good results out of the box. After training the model, I tested it on the test set and calculated the accuracy score. I also printed a detailed classification report, including precision, recall, and F1-score. To make it more readable, I mapped the numeric predictions back to their original class labels using the saved label encoder.
 
-Next, I trained a RandomForestClassifier. This algorithm works by creating many decision trees and combining their results for better accuracy and less overfitting. Once the model was trained, I used it to make predictions on the test data.
+I also plotted the top 10 most important features that the model considered when making predictions. This helped me understand which variables had the most influence in determining the investment avenue, which could be very useful from a business or financial planning perspective.
 
-To evaluate how well the model performed, I calculated its accuracy and printed a classification report. This report gave me useful metrics like precision, recall, and F1-score, which help understand how well the model is doing across different categories. I also used the label encoder to translate the numeric predictions back to the original labels, which made the report easier to read.
+Next, I moved on to a regression task where the goal was to predict the Mutual Fund score, a continuous numerical value. I used the same preprocessing approach but dropped "Mutual_Funds" as the target variable this time.
 
-Finally, I visualized the top 10 most important features that influenced the model’s predictions. Random Forests have a built-in way of measuring feature importance, which I extracted and plotted using Seaborn. The resulting chart clearly highlighted which features had the biggest impact on predicting the investment avenue.
+For the model, I chose Linear Regression since it's a good starting point for regression tasks and helps in understanding linear relationships in the data. After training the model, I predicted the mutual fund scores for the test set and evaluated its performance using Mean Squared Error (MSE) and R² score. These metrics gave me a sense of how close my predictions were to the actual values and how well the model captured the variability in the data.
 
-Overall, this was a complete machine learning workflow — from data preparation to model training and result interpretation. It not only gave me a working model but also provided insights into which factors are most influential when it comes to predicting where someone might choose to invest.
+To visualize the results, I created a scatter plot comparing the actual vs. predicted mutual fund scores, along with an ideal prediction line (y = x). This really helped me see how accurate the predictions were at a glance.
+
+*Final Thoughts*
+
+This project gave me a hands-on understanding of how to approach both classification and regression problems using real-world data. I got to practice essential steps like cleaning data, encoding categorical variables, training models, evaluating performance, and creating visualizations to support my findings.
+
+I also appreciated how different modeling techniques (Random Forest vs. Linear Regression) could be applied to the same dataset to answer different kinds of questions. This really reinforced how flexible machine learning can be when applied thoughtfully.
+
+Overall, it was a solid learning experience that improved my confidence in handling supervised learning tasks and interpreting model results effectively.
 
 *OUTPUT*
 
