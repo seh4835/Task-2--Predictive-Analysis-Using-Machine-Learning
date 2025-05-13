@@ -13,6 +13,7 @@
 *MENTOR*: NEELA SANTOSH
 
 *PROJECT DESCRIPTION*
+
 In this project, I built a machine learning model to predict investment avenues based on various features in a dataset. I used a Random Forest Classifier, which is a popular algorithm for classification problems, and followed a step-by-step process that included data cleaning, encoding, model training, evaluation, and visualization.
 
 To start, I imported all the necessary Python libraries like pandas for data handling, matplotlib and seaborn for visualization, and some tools from scikit-learn for preprocessing and modeling.
